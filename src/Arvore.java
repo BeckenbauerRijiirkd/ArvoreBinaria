@@ -69,7 +69,15 @@ public class Arvore<T> {
             subArvores(atual.getEsquerda());
 
             if (atual.getEsquerda() != null || atual.getDireita() != null) {
-                System.out.println(atual.getValor());
+                if (atual.getEsquerda() != null && atual.getDireita() != null) {
+                    System.out.println("Raiz: " + atual.getValor() + " Esquerda: " + atual.getEsquerda().getValor() + " Direita: " + atual.getDireita().getValor());
+                }
+                if(atual.getEsquerda() != null && atual.getDireita() == null){
+                    System.out.println("Raiz: " + atual.getValor() + " Esquerda: " + atual.getEsquerda().getValor());
+                }
+                if(atual.getDireita() != null && atual.getEsquerda() == null){
+                    System.out.println("Raiz: " + atual.getValor() + " Direita: " + atual.getDireita().getValor());
+                }
             }
             subArvores(atual.getDireita());
         }

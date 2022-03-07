@@ -11,6 +11,7 @@ public class App {
         arvore.adicionar(18);
         arvore.adicionar(13);
         arvore.adicionar(20);
+        arvore.adicionar(21);
         System.out.println("=======Nos=======");
         arvore.emOrdem(arvore.getRaiz());
         System.out.println("=======Folhas=======");
