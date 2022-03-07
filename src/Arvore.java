@@ -13,22 +13,31 @@ public class Arvore<T> {
             this.raiz = novoElemento;
         } else {
             Elemento<T> atual = this.raiz;
+
             while (true) {
+
                 if (novoElemento.getValor() < atual.getValor()) {
                     if (atual.getEsquerda() != null) {
+                        atual.getEsquerda().setProfundidade(atual.getProfundidade() + 1);
                         atual = atual.getEsquerda();
                     } else {
                         atual.setEsquerda(novoElemento);
+                        atual.getEsquerda().setProfundidade(atual.getProfundidade() + 1);
                         break;
                     }
                 } else {
                     if (atual.getDireita() != null) {
+                        atual.getDireita().setProfundidade(atual.getProfundidade() + 1);
                         atual = atual.getDireita();
+
                     } else {
+
                         atual.setDireita(novoElemento);
+                        atual.getDireita().setProfundidade(atual.getProfundidade() + 1);
                         break;
                     }
                 }
+
             }
         }
     }
@@ -59,7 +68,7 @@ public class Arvore<T> {
 
             subArvores(atual.getEsquerda());
 
-            if (atual.getEsquerda() != null || atual.getDireita() != null){
+            if (atual.getEsquerda() != null || atual.getDireita() != null) {
                 System.out.println(atual.getValor());
             }
             subArvores(atual.getDireita());
@@ -68,16 +77,13 @@ public class Arvore<T> {
 
     public void profundidade(Elemento<T> atual) {
 
-
         if (atual != null) {
-
             profundidade(atual.getEsquerda());
-
-            }
+            System.out.println(atual.getValor() + " - Profundidade: " + atual.getProfundidade());
             profundidade(atual.getDireita());
-            
         }
-    
+
+    }
 
     public Elemento<T> getRaiz() {
         return raiz;

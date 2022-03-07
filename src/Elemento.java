@@ -5,6 +5,16 @@ public class Elemento<T> {
     private Elemento<T> esquerda;
     private Elemento<T> direita;
 
+    private Integer profundidade = 0;
+
+
+    public Integer getProfundidade() {
+        return profundidade;
+    }
+
+    public void setProfundidade(Integer profundidade) {
+        this.profundidade = profundidade;
+    }
 
     public Elemento(Integer novoValor) {
         this.valor = novoValor;
