@@ -87,7 +87,13 @@ public class Arvore<T> {
 
         if (atual != null) {
             profundidade(atual.getEsquerda());
-            System.out.println(atual.getValor() + " - Profundidade||Nivel: " + atual.getProfundidade());
+            String result = ("▌"+atual.getValor() + " - Profundidade||Nivel: " + atual.getProfundidade()+ "  ") ;
+            if(result.length() == 29){
+                System.out.println(result.concat(" ▌")); 
+            }else{
+                System.out.println(result.concat("▌")); 
+            }
+
             profundidade(atual.getDireita());
         }
 

@@ -13,15 +13,15 @@ public class App {
         arvore.adicionar(21);
         System.out.println("=======Nos=======");
         arvore.emOrdem(arvore.getRaiz());
-        System.out.println("=======Folhas=======");
+        System.out.println("\n=======Folhas=======");
         arvore.folhas(arvore.getRaiz());
-        System.out.println("=======SubArvores=======");
+        System.out.println("\n=======SubArvores=======");
         arvore.subArvores(arvore.getRaiz());
-        System.out.println("=======Profundidade=======");
+        System.out.println("\n=======Profundidade=======");
         arvore.profundidade(arvore.getRaiz());
-        System.out.println("=======Altura=======");
+        System.out.println("\n=======Altura=======");
         arvore.altura(arvore.getRaiz());
-        System.out.println("=======Grau=======");
+        System.out.println("\n=======Grau=======");
         arvore.grau(arvore.getRaiz());
     }
 }
