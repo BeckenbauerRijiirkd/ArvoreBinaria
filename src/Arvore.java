@@ -95,28 +95,22 @@ public class Arvore<T> {
     }
 
     public void altura(Elemento<T> atual) {
-        
-        
 
         if (atual != null) {
-            
+
             altura(atual.getEsquerda());
-
-
-            
-
 
             altura(atual.getDireita());
 
-            if(atual.getProfundidade() > this.raiz.getAltura()){
+            if (atual.getProfundidade() > this.raiz.getAltura()) {
                 this.raiz.setAltura(atual.getProfundidade());
             }
             atual.setAltura(this.raiz.getAltura() - atual.getProfundidade());
-            if(atual.getEsquerda() == null && atual.getDireita() == null){
+            if (atual.getEsquerda() == null && atual.getDireita() == null) {
                 atual.setAltura(0);
             }
 
-            System.out.println(atual.getValor() +" - altura: "+ atual.getAltura());
+            System.out.println(atual.getValor() + " - altura: " + atual.getAltura());
 
         }
 
