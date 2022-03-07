@@ -1,4 +1,3 @@
-
 public class Arvore<T> {
 
     private Elemento<T> raiz;
@@ -114,6 +113,24 @@ public class Arvore<T> {
 
         }
 
+    }
+
+    public void grau(Elemento<T> atual) {
+
+        if (atual != null) {
+
+            grau(atual.getEsquerda());
+            if (atual.getEsquerda() == null && atual.getDireita() == null) {
+                System.out.println(atual.getValor() + " - Grau: 0");
+            }
+            if (atual.getEsquerda() != null && atual.getDireita() != null) {
+                System.out.println(atual.getValor() + " - Grau: 2");
+            } else if (atual.getEsquerda() != null || atual.getDireita() != null) {
+                System.out.println(atual.getValor() + " - Grau: 1");
+            }
+
+            grau(atual.getDireita());
+        }
     }
 
     public Elemento<T> getRaiz() {
