@@ -70,12 +70,13 @@ public class Arvore<T> {
 
             if (atual.getEsquerda() != null || atual.getDireita() != null) {
                 if (atual.getEsquerda() != null && atual.getDireita() != null) {
-                    System.out.println("Raiz: " + atual.getValor() + " Esquerda: " + atual.getEsquerda().getValor() + " Direita: " + atual.getDireita().getValor());
+                    System.out.println("Raiz: " + atual.getValor() + " Esquerda: " + atual.getEsquerda().getValor()
+                            + " Direita: " + atual.getDireita().getValor());
                 }
-                if(atual.getEsquerda() != null && atual.getDireita() == null){
+                if (atual.getEsquerda() != null && atual.getDireita() == null) {
                     System.out.println("Raiz: " + atual.getValor() + " Esquerda: " + atual.getEsquerda().getValor());
                 }
-                if(atual.getDireita() != null && atual.getEsquerda() == null){
+                if (atual.getDireita() != null && atual.getEsquerda() == null) {
                     System.out.println("Raiz: " + atual.getValor() + " Direita: " + atual.getDireita().getValor());
                 }
             }
@@ -87,8 +88,36 @@ public class Arvore<T> {
 
         if (atual != null) {
             profundidade(atual.getEsquerda());
-            System.out.println(atual.getValor() + " - Profundidade: " + atual.getProfundidade());
+            System.out.println(atual.getValor() + " - Profundidade||Nivel: " + atual.getProfundidade());
             profundidade(atual.getDireita());
+        }
+
+    }
+
+    public void altura(Elemento<T> atual) {
+        
+        
+
+        if (atual != null) {
+            
+            altura(atual.getEsquerda());
+
+
+            
+
+
+            altura(atual.getDireita());
+
+            if(atual.getProfundidade() > this.raiz.getAltura()){
+                this.raiz.setAltura(atual.getProfundidade());
+            }
+            atual.setAltura(this.raiz.getAltura() - atual.getProfundidade());
+            if(atual.getEsquerda() == null && atual.getDireita() == null){
+                atual.setAltura(0);
+            }
+
+            System.out.println(atual.getValor() +" - altura: "+ atual.getAltura());
+
         }
 
     }

@@ -20,5 +20,7 @@ public class App {
         arvore.subArvores(arvore.getRaiz());
         System.out.println("=======Profundidade=======");
         arvore.profundidade(arvore.getRaiz());
+        System.out.println("=======Altura=======");
+        arvore.altura(arvore.getRaiz());
     }
 }

@@ -7,6 +7,16 @@ public class Elemento<T> {
 
     private Integer profundidade = 0;
 
+    private Integer altura = 0;
+
+
+    public Integer getAltura() {
+        return altura;
+    }
+
+    public void setAltura(Integer altura) {
+        this.altura = altura;
+    }
 
     public Integer getProfundidade() {
         return profundidade;
