@@ -1,6 +1,6 @@
-
 public class Elemento<T> {
-    private Integer valor;
+    
+    private T valor;
 
     private Elemento<T> esquerda;
     private Elemento<T> direita;
@@ -11,32 +11,37 @@ public class Elemento<T> {
 
 
     public Integer getAltura() {
+
         return altura;
     }
 
     public void setAltura(Integer altura) {
+
         this.altura = altura;
     }
 
     public Integer getProfundidade() {
+
         return profundidade;
     }
 
     public void setProfundidade(Integer profundidade) {
+
         this.profundidade = profundidade;
     }
 
-    public Elemento(Integer novoValor) {
+    public Elemento(T novoValor) {
         this.valor = novoValor;
         this.esquerda = null;
         this.direita = null;
     }
 
-    public Integer getValor() {
+
+    public T getValor() {
         return valor;
     }
 
-    public void setValor(Integer valor) {
+    public void setValor(T valor) {
         this.valor = valor;
     }
 
