@@ -45,6 +45,24 @@ public class Arvore<T> {
         }
     }
 
+    public void imprimirNLR(Elemento<T> atual) {
+        if (atual != null) {
+            System.out.println(atual.getValor());
+            imprimirNLR(atual.getEsquerda());
+            imprimirNLR(atual.getDireita());
+        }
+    }
+
+    public void imprimirLRN(Elemento<T> atual) {
+        if (atual != null) {
+            imprimirLRN(atual.getEsquerda());
+            
+            imprimirLRN(atual.getDireita());
+            System.out.println(atual.getValor());
+        }
+    }
+
+
     public void folhas(Elemento<T> atual) {
 
         if (atual != null) {
